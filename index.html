@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <title>Pomodoro</title>
+        <!-- <link rel="stylesheet" href="style.css"> -->
+    </head>
+    <body>
+        <header class="bg-blue-500">
+            <h1><i class="fas fa-clock"></i> Focus Timer</h1>
+            <p class="tagline">Boost productivity with Pomodoro Technique</p>
+        </header>
+        <main class="text-center">
+            <section class="bg-blue-300 p-8" id="timer-section">
+                <div id="timer-display" class="text-8xl font-mono font-bold text-gray-800">
+                    <span id="minutes">25</span>:<span id="seconds">00</span>
+                </div>
+            
+                 <div class="" id="timer-controls">
+                    <button id="start-btn" class="mt-8 bg-green-500 text-white px-8 py-4 rounded-lg text-xl hover:bg-green-400">Start</button>
+                    <button id="pause-btn" class="mt-8 bg-yellow-500 text-white px-8 py-4 rounded-lg text-xl hover:bg-yellow-400">Pause</button>
+                    <button id="reset-btn" class="mt-8 bg-red-500 text-white px-8 py-4 rounded-lg text-xl hover:bg-red-400">Reset</button>
+                </div>
+
+                <div class="mt-8" id="session-selector">
+                    <h2>Session Type</h2>
+                    <button id="work" class="bg-gray-200 px-4 py-2 rounded-xl hover:bg-gray-500">Work (25 min)</button>
+                    <button id="break" class="bg-gray-200 px-4 py-2 rounded-xl hover:bg-gray-500">Break (5 min)</button>
+                    <button id="lbreak" class="bg-gray-200 px-4 py-2 rounded-xl hover:bg-gray-500">Long Break (15 min)</button>
+                </div>
+            </section>
+
+            <section class="bg-blue-200" id="task-section">
+                <h2><i class="fas fa-tasks"></i> Tasks</h2>
+                <!-- Task Input Form -->
+                <form class="mt-4 p-4" id="task-form">
+                    <div class="flex gap-2">
+                        <input type="text" id="task" name="task" placeholder="Input task"
+                            class="flex-1 border-gray-300 bg-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2">
+                        <input type="number" id="pomodoros" class="w-20 border-gray-300 px-4 py-2 bg-white rounded-lg focus:outline-none focus:ring-2">
+                        <button type="submit" class="bg-blue-500 px-4 py-2 text-white rounded-lg hover:bg-blue-600">Add task</button>
+                    </div>
+                </form>
+
+                <!-- Task List -->
+                <div class="p-2 m-4 bg-white rounded-lg">
+                    <div class="h-80 py-4 overflow-scroll bg-blue-300 rounded-lg">
+                        <div id="task-list" class="space-y-2">
+                    
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="mt-6 text-center">
+                    <button id="clear-all-tasks" 
+                            class="bg-red-500 hover:bg-red-600 text-white p-2 m-2 rounded-lg font-medium transition duration-200">
+                        <i class="fas fa-trash-alt mr-2"></i>Clear All Tasks
+                    </button>
+                </div>
+            </section>
+
+            <aside class="bg-blue-100" id="stats-panel">
+                
+            </aside>
+
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
